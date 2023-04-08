@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 
     std::cout << "b.cpp pipe: " << argv[2] << std::endl;
 
-    if ((myfifo = open(argv[2], O_WRONLY, 0666)) == -1)
+    if ((myfifo = open(argv[2], O_WRONLY)) == -1)
     {
         perror("Pipe open error");
         _exit(EXIT_FAILURE);

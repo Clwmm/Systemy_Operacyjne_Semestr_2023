@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 
     int file;
     int reading;
-    int pipe_;
+    int myfifo;
 
     const size_t consumerDataSize = 5;
     const int waitingPeriod[2] = {50, 450}; // in miliseconds
@@ -46,12 +46,12 @@ int main(int argc, char* argv[])
 
     std::cout << "c.cpp pipe: " << argv[2] << std::endl;
 
-    if ((pipe_ = open(argv[2], O_WRONLY, 0666)) == -1)
+    if ((myfifo = open(argv[2], O_WRONLY)) == -1)
     {
-        perror("Pipe open error");
+        perror("Fifo open error");
         _exit(EXIT_FAILURE);
     }
-    std::cout << "Pipe opened c.cpp" << std::endl;
+    std::cout << "Fifo opened c.cpp" << std::endl;
 
     
     while (whileLoop)
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
             
         std::this_thread::sleep_for(std::chrono::milliseconds(fromToRandom(waitingPeriod[0], waitingPeriod[1])));
             
-        reading = read(pipe_, &bufor, consumerDataSize);
+        reading = read(myfifo, &bufor, consumerDataSize);
 
         switch (reading)
         {
@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
         _exit(EXIT_FAILURE);
     }
 
-    if (close(pipe_) == -1)
+    if (close(myfifo) == -1)
     {
         perror("Pipe close error");
         _exit(EXIT_FAILURE);
