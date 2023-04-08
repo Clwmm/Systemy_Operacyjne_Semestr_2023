@@ -1,0 +1,49 @@
+==============================
+= Mateusz Kałwa = 15.03.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 3: Sygnaly
+
+(a) Program ustawiajacy obsluge sygnalu o
+    podanym numerze w pierwszym argumencie,
+    zgodnie z opjca podana w drugim argumencie.
+		- a.cpp
+
+(b) Program uruchamiajacy program a.cpp w procesie
+    potomnym i wysylajacy mu sygnal przy pomocy
+    funkcji kill().
+		- b.cpp
+
+(c1) Program tworzacy proces potomny ktory uruchamia
+    program c2.cpp. Proces macierzysty ustawia potomnemu ignorowanie podanego syngalu. Proces
+    potomny tworzy 3 procesy potomne ktore uruchamiaja
+    program a.cpp i czekaja na sygnal. Pierwszy proces
+    macierzysty wysyla do wszystkich procesow potomnych sygnal i czeka na zakonczenie.
+		- c1.cpp
+        - c2.cpp
+
+		Kompilacja
+==============================
+ -> Aby skompilowac wszystkie pliki nalezy uzyc komendy:
+		make all
+
+
+	Uruchaniamie po kompilacji
+    [Lub kompilacja i uruchomienie]
+==============================
+ -> Aby uruchomic program a nalezy uzyc komendy:
+		make r1
+
+ -> Aby uruchomic program a nalezy uzyc komendy:
+		make r2
+
+ -> Aby uruchomic program a nalezy uzyc komendy:
+		make r3
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+

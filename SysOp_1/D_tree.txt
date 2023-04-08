@@ -1,0 +1,19 @@
+PID: 597 PPID: 9 PGID: 597  - Proces macierzysty
+{
+    PID: 598 PPID: 597 PGID: 597
+    {
+        PID: 599 PPID: 598 PGID: 597
+        {
+            PID: 600 PPID: 599 PGID: 597
+        }
+
+        PID: 601 PPID: 598 PGID: 597
+    }
+
+    PID: 602 PPID: 597 PGID: 597
+    {
+        PID: 603 PPID: 602 PGID: 597
+    }
+
+    PID: 604 PPID: 597 PGID: 597
+}

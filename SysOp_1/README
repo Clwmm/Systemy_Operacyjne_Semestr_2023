@@ -1,0 +1,102 @@
+==============================
+= Mateusz Ka³wa = 15.03.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 1: Procesy Potomnie: fork:
+
+(a) Program wypisujacy identyfikatory UID,
+	GID, PID, PPID, PGID poprzez funkcje
+	stworzona przez autora zadan displayID().
+		- a.cpp
+
+(b) Program wywolujacy funkcje fork()
+	trzykrotnie w petli i wypisujacy
+	identyfikatory przy uzyciu funkcji
+	displayID(). Na koniec, poprzez
+	uzycie funkcji wait(), proces
+	macierzysty czeka na zakonczenie
+	procesow potomnych
+		- b.cpp
+
+(c) Zadanie takie samo jak b, lecz zamiast
+	funkcji wait() jest uzywana funkcja 
+	sleep().
+
+	Po uzyciu polecenia 'pstree -p' mozna
+	zauwazyc ze procesem adoptujacym
+	osierocone procesy jest proces 
+	init(8).	Dowod w pliku: C_pstree.png
+
+(d) Zadanie takie samo jak b, lecz wstawiona
+	zostala funkcja sleep aby procesy pojawily
+	sie na ekranie pogrupowane pokoleniami.
+
+	Sporzadzone drzewo genealogiczne jest w
+	pliku: D_tree.txt
+
+(e) Zadanie takie samo jak b, lecz dla kazdego
+	procesu potomnego zostala uzyta funkcja
+	setpgid().
+
+	Dzieki temu kazdy kolejno wypisujacy sie
+	proces mial o jeden wiekszy numer PGID.
+
+
+
+		Odpowiedz na
+		koncowe pytanie
+==============================
+
+ -> Przy n-krotnym wywolaniu funkcji fork()
+	powstanie n^2-1 procesow potomnych plus
+	proces macierzysty. Liczac z procesem
+	macierzystym powstanie n^2 procesow.
+	Dzieje sie tak dlatego ze potomek
+	procesu macierzystego wywola swojego
+	potomka itd.
+
+
+		Kompilacja
+==============================
+ -> Aby skompilowac pierwszy program nalezy uzyc komendy:
+		make a
+
+ -> Aby skompilowac drugi program nalezy uzyc komendy:
+		make b
+
+ -> Aby skompilowac trzeci program nalezy uzyc komendy:
+		make c
+
+ -> Aby skompilowac czwarty program nalezy uzyc komendy:
+		make d
+
+ -> Aby skompilowac piaty program nalezy uzyc komendy:
+		make e
+
+
+	Uruchaniamie po kompilacji
+==============================
+ -> Aby uruchomic pierwszy program nalezy uzyc komendy:
+		./a
+
+ -> Aby uruchomic drugi program nalezy uzyc komendy:
+		./b
+
+ -> Aby uruchomic trzeci program nalezy uzyc komendy:
+		./c
+
+ -> Aby uruchomic czwarty program nalezy uzyc komendy:
+		./d
+
+ -> Aby uruchomic piaty program nalezy uzyc komendy:
+		./e
+
+
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+

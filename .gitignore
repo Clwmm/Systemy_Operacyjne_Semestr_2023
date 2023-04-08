@@ -1,0 +1,8 @@
+# ignore all .tar.gz files
+*.tar.gz
+
+# ignore all .o files
+*.o
+
+# ignore all . files
+*.

@@ -1,0 +1,51 @@
+==============================
+= Mateusz Ka³wa = 15.03.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 2: Funckja execlp:
+
+(a) Program uzywajacy, w petli wraz z 
+	funkcja fork(), funkcji execp()
+	z argumentem programu podanego
+	w argumencie programu
+		- main.cpp
+
+(b) Program wypisujacy identyfikatory UID,
+	GID, PID, PPID, PGID poprzez funkcje
+	stworzona przez autora zadan displayID().
+		- fun.cpp
+
+
+
+		Odpowiedz na
+		koncowe pytanie
+==============================
+
+ -> Przy n-krotnym wywolaniu funkcji fork-exec
+	powstanie n nowych procesow potomnych
+	a n+1 procesow liczac wraz z macierzystym.
+	Dzieje sie tak poniewaz funkcja exec zatrzymuje
+	dzialanie aktualnego procesu i otwiera nowy
+	proces ktory wykonuje kod zawarty w pliku ktory
+	zostal podany jako argument
+
+
+		Kompilacja
+==============================
+ -> Aby skompilowac wszystkie pliki nalezy uzyc komendy:
+		make all
+
+
+	Uruchaniamie po kompilacji
+==============================
+ -> Aby uruchomic program nalezy uzyc komendy:
+		./main fun
+
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+

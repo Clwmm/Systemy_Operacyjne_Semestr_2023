@@ -1,0 +1,33 @@
+==============================
+= Mateusz Kałwa = 07.04.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 3: Potoki
+
+(a) Program tworzy jeden proces potomny
+	który jest konsumentem a proces
+	macierzysty jest producentem.
+	Producent pobiera dane z pliku "in"
+	i wysyła do potoku. Konsument pobiera
+	dane z potoku i wysyła do pliku "out".
+		- a.cpp
+
+		Kompilacja
+==============================
+ -> Aby skompilowac wszystkie pliki nalezy uzyc komendy:
+		make all
+
+
+	Uruchaniamie po kompilacji
+    [Lub kompilacja i uruchomienie]
+==============================
+ -> Aby uruchomic program a nalezy uzyc komendy:
+		make r1
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+
