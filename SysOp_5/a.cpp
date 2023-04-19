@@ -20,7 +20,7 @@
     argv[5] - pipe
 */
 
-char pipe_[20];
+char pipe_[30];
 
 void end(void)
 {
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 
     int wait_status;
 
-    if (mkfifo(pipe_, 0666) == -1)
+    if (mkfifo(argv[5], 0644) == -1)
     {
         perror("Make fifo error");
         _exit(EXIT_FAILURE);
@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
             {
             case 0:
                 // Producer
-                if (execl(argv[1], argv[1], argv[3], pipe_, (char*)NULL) == -1)
+                if (execl(argv[1], argv[1], argv[3], argv[5], (char*)NULL) == -1)
 		        {
 			        perror("Execl error");
 			        exit(EXIT_FAILURE);
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
                 break;
             case 1:
                 // Consumer
-                if (execl(argv[2], argv[2], argv[4], pipe_, (char*)NULL) == -1)
+                if (execl(argv[2], argv[2], argv[4], argv[5], (char*)NULL) == -1)
 		        {
 			        perror("Execl error");
 			        exit(EXIT_FAILURE);

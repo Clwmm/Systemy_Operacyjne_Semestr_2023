@@ -45,10 +45,32 @@ $(EXEC3): $(OBJS3)
 .PHONY: clean tar
 EXECS = $(EXEC1) $(EXEC2) $(EXEC3)
 
-.PHONE: ra
+.PHONE: r1
 r1: $(EXEC1) $(EXEC2) $(EXEC3)
 	clear
 	./$(EXEC1) ./$(EXEC2) ./$(EXEC3) $(FILE_IN) $(FILE_OUT) $(PIPE)
+	@echo "========================="
+	@diff -s $(FILE_IN) $(FILE_OUT)
+
+.PHONE: createfifo
+createfifo:
+	mkfifo -m 0644 $(PIPE)
+
+.PHONE: removefifo
+removefifo:
+	rm $(PIPE)
+
+.PHONE: prod
+prod: $(EXEC2)
+	./$(EXEC2) $(FILE_IN) $(PIPE)
+
+.PHONE: con
+con: $(EXEC3)
+	./$(EXEC3) $(FILE_OUT) $(PIPE)
+
+.PHONE: diff
+diff: 
+	@diff -s $(FILE_IN) $(FILE_OUT)
 
 clean:                                                     
 	rm -f *.o  *~ $(EXECS)

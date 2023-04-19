@@ -33,8 +33,8 @@ int main(int argc, char* argv[])
     int reading;
     int myfifo;
 
-    const size_t consumerDataSize = 5;
-    const int waitingPeriod[2] = {50, 450}; // in miliseconds
+    const size_t consumerDataSize = 9;
+    const int waitingPeriod[2] = {15, 200}; // in miliseconds
 
     bool whileLoop = true;
 
@@ -44,15 +44,11 @@ int main(int argc, char* argv[])
         _exit(EXIT_FAILURE);
     }
 
-    std::cout << "c.cpp pipe: " << argv[2] << std::endl;
-
-    if ((myfifo = open(argv[2], O_WRONLY)) == -1)
+    if ((myfifo = open(argv[2], O_RDONLY, 0644)) == -1)
     {
         perror("Fifo open error");
         _exit(EXIT_FAILURE);
     }
-    std::cout << "Fifo opened c.cpp" << std::endl;
-
     
     while (whileLoop)
     {
