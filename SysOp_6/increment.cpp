@@ -22,7 +22,6 @@ int main(int argc, char* argv[])
 
     srand(time(NULL));
 
-    int waitingPeriod[2] = { 15, 150 };
     int nOsections = 0;
 
     sem_t* sem_ptr;
@@ -38,6 +37,13 @@ int main(int argc, char* argv[])
     if (atoi(A_SYNCHRONIZATION) == 1)
         synchro = true;
 
+    int waitingPeriod[2] = { 15, 200 };
+    if (!synchro)
+    {
+        waitingPeriod[0] = 15;
+        waitingPeriod[1] = 700;
+    }
+
     if (synchro)
         sem_ptr = sem::open(A_SEMAPHORE_NAME);
 
@@ -47,8 +53,8 @@ int main(int argc, char* argv[])
 
         if (synchro)
         {
-            std::cout << "PID: " << getpid() << "\t Semaphore value: " << sem::getValue(sem_ptr) << std::endl;
             sem::decrement(sem_ptr);
+            std::cout << "PID: " << getpid() << "\t Semaphore value: " << sem::getValue(sem_ptr) << std::endl;
         }
 
         if ((file = open(A_FILENAME, O_RDONLY, 0644)) == -1)
@@ -113,6 +119,6 @@ int main(int argc, char* argv[])
 
     }
 
-    if (synchro)
-        sem::delete_s(A_SEMAPHORE_NAME);
+    // if (synchro)
+    //     sem::delete_s(A_SEMAPHORE_NAME);
 }

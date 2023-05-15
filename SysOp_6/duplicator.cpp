@@ -3,7 +3,7 @@
 #include <sys/wait.h>
 
 /*
-    argv[1] - incement program name
+    argv[1] - increment program name
     argv[2] - number of increment programs
     argv[3] - number of sections
     argv[4] - file name
@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     if (argc != 7)
     {
         std::cout << "Specified wrong number of arguments" << std::endl;
-        _exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 
     if (atexit(end) != 0)
@@ -96,6 +96,8 @@ int main(int argc, char* argv[])
 
     for (int i = 0; i < nOPrograms; ++i)
     {
+        if (!synchro)
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         switch (fork())
         {
         case -1:
@@ -104,9 +106,11 @@ int main(int argc, char* argv[])
             break;
         
         case 0:
-            execl(A_IPROGRAM_NAME, A_IPROGRAM_NAME, A_NOSECTIONS, A_FILENAME, A_SEMAPHORE_NAME, A_SYNCHRONIZATION);
-            perror("Error execl");
-            exit(EXIT_FAILURE);
+            if (execl(A_IPROGRAM_NAME, A_IPROGRAM_NAME, A_NOSECTIONS, A_FILENAME, A_SEMAPHORE_NAME, A_SYNCHRONIZATION, (char*)NULL) == -1);
+            {
+                perror("Error execl");
+                exit(EXIT_FAILURE);
+            }
             break;
 
         default:

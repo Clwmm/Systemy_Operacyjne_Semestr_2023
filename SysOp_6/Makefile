@@ -5,8 +5,8 @@
 DIR = `basename $(CURDIR)`
 #------------------------
 
-NAME2 = duplicator
-NAME3 = increment
+NAME1 = duplicator
+NAME2 = increment
 LIB1 = sem
 FILE = number.txt
 
@@ -35,12 +35,18 @@ LD = $(CO)
 #############################
 .PHONY: all
 all: $(EXEC1) $(EXEC2)
+
+.PHONE: d
+d: $(EXEC1)
+
+.PHONE: i
+i: $(EXEC2)
 #############################
 $(EXEC1): $(OBJS1) $(LIBS1)
-	 $(LD) -o $@ $(LDFLAGS) $^
+	 $(LD) $^ -o $@ $(LDFLAGS) 
 #############################
 $(EXEC2): $(OBJS2) $(LIBS1)
-	 $(LD) -o $@ $(LDFLAGS) $^
+	 $(LD) $^ -o $@ $(LDFLAGS) 
 #############################
 
 .PHONE: run
@@ -49,7 +55,7 @@ run: $(EXEC1) $(EXEC2)
 	./$(EXEC1) ./$(EXEC2) $(NUMBER_OF_PROGRAMS) $(NUMBER_OF_SECTIONS) $(FILE) $(SEMAPHORE_NAME) $(SYNCHRONIZATION)
 
 .PHONY: clean tar
-EXECS = $(EXEC1) $(EXEC2) $(EXEC3)
+EXECS = $(EXEC1) $(EXEC2)
 
 clean:                                                     
 	rm -f *.o  *~ $(EXECS)
