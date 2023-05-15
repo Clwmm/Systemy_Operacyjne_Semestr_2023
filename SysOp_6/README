@@ -1,5 +1,5 @@
 ==============================
-= Mateusz Kałwa = 19.04.2023 =
+= Mateusz Kałwa = 15.05.2023 =
 ==============================
 
 
@@ -8,20 +8,22 @@
 
 Cwiczenie 5: Potok fifo
 
-(a) Program tworzy potok fifo
-	po tym otwiera programy b oraz c
-	ktore sa konsumentem i producentem
-	oraz dzialaja na takiej samej zasadzie
-	jak w Cwiczeniu 4
-		- a.cpp
+(sem) Wlasna "biblioteka" z wlasnym
+	namesapce "sem" która ma wszystkie
+	podstawowe operacje na semaforach
+		- sem.cpp
+		- sem.h
 
-(b) Program producenta dzialajacy na takiej
-	samej zasadzie jak w Cwiczeniu 4
-		- b.cpp
+(increment) Program który gdy ma odblokowany
+		semafor to otwiera plik "number.txt"
+		zczytuje jego wartość, zwiększa o
+		jeden i zapisuje
+		- increment.cpp
 
-(c) Program konsumenta dzialajacy na takiej
-	samej zasadzie jak w Cwiczeniu 4
-		- c.cpp
+(duplicator) Program ktory tworzy semafor
+		i otwiera podana liczbe programow
+		increment
+		- duplcator.cpp
 
 		Kompilacja
 ==============================
@@ -33,17 +35,7 @@ Cwiczenie 5: Potok fifo
     [Lub kompilacja i uruchomienie]
 ==============================
  -> Aby uruchomic program nalezy uzyc komendy:
-		make r1
-
- -> Aby sprawdzic dzialanie programu w 2 terminalach nalezy:
-		W pierszym terminalu:
-			make createfifo
-			make prod
-		W drugim terminalu:
-			make con
-		Na konsu w obojetnie jakim terminalu:
-			make diff
-			make removefifo
+		make run
 		
 
 -> Aby usunac zbedne pliki nalezy uzyc funkcji:

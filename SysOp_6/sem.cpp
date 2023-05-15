@@ -1,5 +1,7 @@
 #include "sem.h"
 
+// Mateusz Kalwa
+
 sem_t* sem::create(const char* name)
 {
     sem_t *sem_ptr;

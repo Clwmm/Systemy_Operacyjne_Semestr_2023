@@ -1,11 +1,6 @@
 #include "sem.h"
 
-/*
-    argv[1] - number of sections
-    argv[2] - file name
-    argv[3] - semaphore name
-    argv[4] - synchronization
-*/
+// Mateusz Kalwa
 
 #define A_NOSECTIONS argv[1]
 #define A_FILENAME argv[2]

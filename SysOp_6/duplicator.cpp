@@ -2,14 +2,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 
-/*
-    argv[1] - increment program name
-    argv[2] - number of increment programs
-    argv[3] - number of sections
-    argv[4] - file name
-    argv[5] - semaphore name
-    argv[6] - synchronization
-*/
+// Mateusz Kalwa
 
 #define A_IPROGRAM_NAME argv[1]
 #define A_NOPROGRAMS argv[2]

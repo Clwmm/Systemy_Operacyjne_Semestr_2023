@@ -1,6 +1,8 @@
 #ifndef SEM_H
 #define SEM_H
 
+// Mateusz Kalwa
+
 #include <iostream>
 #include <semaphore.h>
 #include <fcntl.h>
