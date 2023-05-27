@@ -14,16 +14,24 @@ Cwiczenie 5: Potok fifo
 		- sem.cpp
 		- sem.h
 
-(increment) Program który gdy ma odblokowany
-		semafor to otwiera plik "number.txt"
-		zczytuje jego wartość, zwiększa o
-		jeden i zapisuje
-		- increment.cpp
+(shm) Wlasna "biblioteka" z wlasnym
+	namesapce "shm" która ma wszystkie
+	podstawowe operacje na shared memory
+		- shm.cpp
+		- shm.h
 
-(duplicator) Program ktory tworzy semafor
-		i otwiera podana liczbe programow
-		increment
-		- duplcator.cpp
+(main) Program uruchamiajacy programy
+		producer i consumer
+		- main.cpp
+
+(producer) Program pobierajacy dane z pliku
+			in i zapisujacy je na shared memory
+			utworzone w programie main
+		- producer.cpp
+
+(consumer) Program pobierajacy dane z shared
+			memory i zapisujacy w plik out
+		- consumer.cpp
 
 		Kompilacja
 ==============================
