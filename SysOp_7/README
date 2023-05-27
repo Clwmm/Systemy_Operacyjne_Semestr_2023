@@ -1,0 +1,43 @@
+==============================
+= Mateusz Kałwa = 15.05.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 5: Potok fifo
+
+(sem) Wlasna "biblioteka" z wlasnym
+	namesapce "sem" która ma wszystkie
+	podstawowe operacje na semaforach
+		- sem.cpp
+		- sem.h
+
+(increment) Program który gdy ma odblokowany
+		semafor to otwiera plik "number.txt"
+		zczytuje jego wartość, zwiększa o
+		jeden i zapisuje
+		- increment.cpp
+
+(duplicator) Program ktory tworzy semafor
+		i otwiera podana liczbe programow
+		increment
+		- duplcator.cpp
+
+		Kompilacja
+==============================
+ -> Aby skompilowac wszystkie pliki nalezy uzyc komendy:
+		make all
+
+
+	Uruchaniamie po kompilacji
+    [Lub kompilacja i uruchomienie]
+==============================
+ -> Aby uruchomic program nalezy uzyc komendy:
+		make run
+		
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+
