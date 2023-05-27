@@ -1,12 +1,12 @@
 ==============================
-= Mateusz Kałwa = 15.05.2023 =
+= Mateusz Kałwa = 28.05.2023 =
 ==============================
 
 
 		Zawartosc:
 ==============================
 
-Cwiczenie 5: Potok fifo
+Cwiczenie 7: Shared memory & semaphore
 
 (sem) Wlasna "biblioteka" z wlasnym
 	namesapce "sem" która ma wszystkie
