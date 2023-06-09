@@ -1,0 +1,44 @@
+==============================
+= Mateusz Kałwa = 05.06.2023 =
+==============================
+
+
+		Zawartosc:
+==============================
+
+Cwiczenie 7: Shared memory & semaphore
+
+(meq) Wlasna "biblioteka" z wlasnym
+	namesapce "mq" która ma wszystkie
+	podstawowe operacje na message queue
+		- meq.cpp
+		- meq.h
+
+(server) Program tworzacy nazwana message 
+	queue i czekajacy na recive. W momencie otrzymania wiadomosci odsyla wynik obliczen
+		- server.cpp
+
+(client) Program wysylajacy do nazwanej kolejki
+	przez program server wiadmosc z obliczeniami
+	i czeka na odpowiedz
+		- client.cpp
+
+
+		Kompilacja
+==============================
+ -> Aby skompilowac wszystkie pliki nalezy uzyc komendy:
+		make all
+
+
+	Uruchaniamie po kompilacji
+    [Lub kompilacja i uruchomienie]
+==============================
+ -> Aby uruchomic program server nalezy uzyc komendy:
+		make a
+-> Aby uruchomic program client nalezy uzyc komendy:
+		make b
+		
+
+-> Aby usunac zbedne pliki nalezy uzyc funkcji:
+		make clean
+
